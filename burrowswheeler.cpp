@@ -9,6 +9,7 @@
 //
 //  SuffixArray from GeeksforGeeks: https://www.geeksforgeeks.org/suffix-array-set-1-introduction/
 //  Burrows Wheeler Transform Explanation: https://www.youtube.com/watch?v=4n7NPk5lwbI
+//  Further Burrows Wheeler Explanation/Optimization: https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform
 //
 //  List any classmate you discussed the problem with. Remember, you can only
 //  have high-level verbal discussions. No code should be shared, developed,
@@ -46,7 +47,7 @@ int *buildSuffixArray(char *txt, int n)
     struct suffix suffixes[n];
 
     // Store suffixes and their indexes in an array of structures.
-    // The structure is needed to sort the suffixes alphabatically
+    // The structure is needed to sort the suffixes alphabetically
     // and maintain their old indexes while sorting
     for (int i = 0; i < n; i++)
     {
@@ -67,38 +68,42 @@ int *buildSuffixArray(char *txt, int n)
     return  suffixArr;
 }
 
-// A utility function to print an array of given size
-void printArr(int arr[], int n)
-{
-    for(int i = 0; i < n; i++)
-        cout << arr[i] << " ";
-    cout << endl;
-}
-
-// Driver program to test above functions
 
 
 int main(){
+    //ios_base::sync_with_stdio(false); // this stops synchronizing I/O between iostream and stdio, avoiding some overhead
+    //cin.tie(NULL); // ordinarily cin is tied to cout, meaning cin will flush cout before reading
     string s;
-    while(getline(cin, s)) {
-        //getline(cin, s);
-        int size = s.size();
-        int index;
-        char chars[size];
-        strcpy(chars,s.c_str());
-        cout << chars;
+    char chars[210000];
+    while(cin.getline(chars,210000)) {
+        int size = strlen(chars);
+        //cout << size;
+        //char chars2[size];
+        //strcpy(chars2,s.c_str());
+        //s = s + s;
+        //strcpy(chars,s.c_str());
+        //strcat(chars,chars);
+        for (int i = size; i < size*2; ++i) {
+            chars[i] = chars[i-size];
+        }
+        //cout << chars;
 
         int *suffixArr = buildSuffixArray(chars,  size);
-        //cout << size;
-        for (int i = 0; i < size; i++) {
-            index = suffixArr[i] -1;
-            if(index < 0){
-                index += size;
-            }
-            cout << s[index];
-        }
-        cout << '\n';
 
+        for (int i = 0; i < size; i++) {
+            if (suffixArr[i] > 0){
+                cout << chars[suffixArr[i]-1];
+
+            }
+            else{
+                cout << chars[size-1];
+
+            }
+        }
+        //cout << 't';
+        cout << endl;
         //cout << "test";
+
+
     }
 }

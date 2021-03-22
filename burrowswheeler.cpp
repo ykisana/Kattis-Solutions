@@ -82,7 +82,7 @@ int main(){
         //strcpy(chars2,s.c_str());
         //s = s + s;
         //strcpy(chars,s.c_str());
-        //strcat(chars,chars);
+        strcat(chars,chars);
         for (int i = size; i < size*2; ++i) {
             chars[i] = chars[i-size];
         }

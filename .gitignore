@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+# Kattis in-outs/Test cases
+*.in
+*.out
+*.txt
+
+# JetBrains Folders
+/.idea
+/cmake-build-debug

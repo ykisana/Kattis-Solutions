@@ -34,7 +34,7 @@ struct TrieNode {
     ~TrieNode() { for (auto p : ch) delete p.second; }
 };
 
-bool addWord(const string& str, TrieNode* node) {
+void addWord(const string& str, TrieNode* node) {
     // ok: indicates no string already stored is a prefix of the new string s
     bool ok = !(node->end);
 
@@ -42,7 +42,7 @@ bool addWord(const string& str, TrieNode* node) {
         if (node->ch.find(c) == node->ch.end())
             node->ch[c] = new TrieNode;
 
-        node->count++;
+        node->count = node->count + 1;
         node = node->ch[c];
         if (node->end) ok = false;
     }
@@ -51,14 +51,14 @@ bool addWord(const string& str, TrieNode* node) {
     node->end = true;
 
     // finally, also check that this is a leaf node (i.e. no children)
-    return node->count - 1;
+    cout << node->count - 1;
 }
 
 void solve(){
+    TrieNode root;
     string s;
     cin >> s;
-
-
+    addWord(s, &root);
 }
 
 int main(){

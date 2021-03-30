@@ -7,10 +7,8 @@
 //  and problem solving, but you are not permitted to hunt down solutions to
 //  these particular problems!
 //
-//  collidingtraffic solution by prof: https://eclass.srv.ualberta.ca/pluginfile.php/7035236/mod_resource/content/1/collidingtraffic.cpp
-//  Collision of spheres: https://studiofreya.com/3d-math-and-physics/little-more-advanced-collision-detection-spheres/
-//  For above only formulas looked at, not code
-//  Formula for quadratic roots https://www.programiz.com/cpp-programming/examples/quadratic-roots//
+//  N/A
+//
 //
 //  List any classmate you discussed the problem with. Remember, you can only
 //  have high-level verbal discussions. No code should be shared, developed,

@@ -21,7 +21,7 @@
 //  with the collaboration policy in CMPUT 403.
 //*/
 
-# include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 

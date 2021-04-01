@@ -128,12 +128,8 @@ int main(){
 
                     //intersections.insert(intesect(line1.x, line2.x, line1.y, line2.y));
                 }
-
             }
-
-
         }
-
     }
     if (possible){
         cout << max;
@@ -148,12 +144,5 @@ int main(){
         cout << intersections[i].x << " " << intersections[i].y << "\n";
     }
      */
-
-
-
-
-
-
-
 
 }

@@ -1,21 +1,26 @@
 #include <iostream>
+#define MAXN 1000100
 
 using namespace std;
 
 int main(){
-    int bloons_count;
-    cin >> bloons_count;
-    int count = 1;
-    int bloons[bloons_count];
-    for (int i = 0; i< bloons_count; i++){
-        cin >> bloons[i];
-    }
-    for (int i = 1; i < bloons_count; i++){
-        if(bloons[i] > bloons[i-1]){
-            count++;
-        }
-    }
-    cout << count;
+    long long n, h, count = 0;
+    long long bloons[MAXN] = {0};
 
+    cin >> n;
+
+    for (long long i = 0; i< n; i++) {
+        cin >> h;
+        if (bloons[h] > 0) {
+            bloons[h]--;
+        }
+        bloons[h-1]++;
+    }
+    
+    for(long long i = 0; i < MAXN; i++){
+        count += bloons[i];
+    }
+
+    cout << count;
 
 }

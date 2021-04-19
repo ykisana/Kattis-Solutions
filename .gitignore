@@ -39,3 +39,6 @@
 # JetBrains Folders
 /.idea
 /cmake-build-debug
+
+# test files
+test.cpp

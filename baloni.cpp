@@ -16,7 +16,7 @@ int main(){
         }
         bloons[h-1]++;
     }
-    
+
     for(long long i = 0; i < MAXN; i++){
         count += bloons[i];
     }
